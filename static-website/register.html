@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <basefont face="Cambria" size="4"> <br>
+        <center>
+       
+        <font face="Brush Script MT" size="7" color="purple">
+        <b>Registration Form</b>
+        </font>
+        </center>
+
+
+	<form id="form" name="Form" class="form" onsubmit=" alert('Check Your Mail for Verification!!')">
+        <table align="center" width="100" height="150" cellspacing=”15”>
+            <tr ><td><b>Username:</b></td>
+            <td colspan="2"><input type="text" name="t1" id="name" placeholder="Username" size="30"></td>
+            </tr>
+            <tr>
+                <td><b>Gender:</b></td>
+                <td><input type="radio" name="gender" value="Male" />Male</td>
+                <td><label><input type="radio" name="gender" value="Female" />Female</label></td>
+            </tr>
+            <tr ><td><b>College Email:</b></td>
+                <td colspan="2"><input type="email" placeholder="abc@samriddhi.edu.np" id="email" name="email" required size="30"/></td>
+            </tr>
+            <tr ><td><b>Mobile No:</b></td>
+                <td colspan="2"><input type="text" placeholder="98*******" id="mobileno" maxlength="10" size="30" /></td>
+            </tr>
+            <tr>
+            <td><b>Password:</b></td>
+                <td  colspan="2"><input type="password" name="t2"id="pass"placeholder="*******" size="30"></td>
+            </tr>
+            <td><b>Password Check:</b></td>
+                <td  colspan="2"><input type="password" name="t2"id="pass2"placeholder="*******" size="30"></td>
+            </tr>
+            <tr></tr>
+            <tr align="center">
+            <td><input type="submit" name="b1" value="Submit"></td>
+            <td></td>
+            <td><input type="reset" name="b2" value="Reset" onclick="alert('Form Reset, Done!!')"></td>
+        
+            </tr>
+            </table>
+		
+
+
+</body>
+
+</html>

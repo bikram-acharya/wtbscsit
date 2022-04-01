@@ -1,0 +1,27 @@
+<html>
+ <head><title>CSE</title></head>
+ <body bgcolor="PeachPuff">
+ <center><font color="cyan"><h1>Bachelor in Computer Application</h1></font></center>
+<br>
+
+ <form align="center" >
+    <label for="books">Choose a Book:</label>
+    <select id="books" name="books">
+        <option value="select the book" id ="selected" selected>Select the book
+        <option value="WT">Web Technology
+        <option value="OS">Operaring System
+        <option value="CN">Computer Network
+        <option value="COA">Computer Organization & Architecture
+    </select></br>
+
+    <label for="quantity">Quantity:</label>
+    <input type="text" id="quantity"></br>
+    <input type="submit" value="Submit" onclick="selected.value='You have seleceted '+parseInt(quantity.value)+' of '+books.options[books.selectedIndex].text;return false;">
+    </br>
+    </br>
+    <output name="selected" for="books"></output>
+
+ </form>
+
+ </body>
+</html> 
