@@ -1,0 +1,107 @@
+<?xml version = "1.0"?>
+<userlist>
+    <user uid="usr01">
+        <username>Gouse</username>
+        <address>DSNR</address>
+        <phone>8801550101</phone>
+        <email>Gouse.sheikh@gmail.com</email>
+        <books>
+            <bid>bk101</bid>
+            <bid>bk102</bid>
+        </books>
+    </user>
+    <user uid="usr02">
+        <username>D Divakar</username>
+        <address>Ameerpet</address>
+        <phone>9888888888</phone>
+        <email>D Divakar@gmail.com</email>
+        <books>
+            <bid>bk103</bid>
+            <bid>bk105</bid>
+            <bid>bk107</bid>
+        </books>
+    </user>
+    <user uid="usr03">
+        <username>Rajinth</username>
+        <address>SR Nagar</address>
+        <phone>9866666666</phone>
+        <email>Rajinth@yahoo.com</email>
+        <books>
+            <bid>bk103</bid>
+        </books>
+    </user>
+    <user uid="usr04">
+        <username>M Vijaya</username>
+        <address>DESHMUKHI</address>
+        <phone>9835994445</phone>
+        <email>M Vijaya@yahoo.com</email>
+        <books>
+            <bid>bk101</bid>
+            <bid>bk102</bid>
+            <bid>bk105</bid>
+            <bid>bk109</bid>
+        </books>
+    </user >
+    <user uid="usr05">
+        <username>Kusuma</username>
+        <address>KOTI</address>
+        <phone>968877555</phone>
+        <email>Kusuma@yahoo.com</email>
+        <books>
+            <bid>bk111</bid>
+        </books>
+    </user>
+    <user uid="usr06">
+        <username>P Kalpana</username>
+        <address>KOTI</address>
+        <phone>968875554</phone>
+        <email>P Kalpana@yahoo.com</email>
+        <books>
+            <bid>bk105</bid>
+            <bid>bk107</bid>
+            <bid>bk111</bid>
+            <bid>bk112</bid>
+        </books>
+    </user>
+    <user uid="usr07">
+        <username>V Anitha</username>
+        <address>KPHB</address>
+        <phone>968888554</phone>
+        <email>V Anitha@yahoo.com</email>
+        <books>
+            <bid>bk105</bid>
+        </books>
+    </user>
+    <user uid="usr08">
+        <username>M Ramesh</username>
+        <address>IBP</address>
+        <phone>968878554</phone>
+        <email>M Ramesh@yahoo.com</email>
+        <books>
+            <bid>bk101</bid>
+            <bid>bk110</bid>
+        </books>
+    </user>
+    <user uid="usr09">
+        <username>Raswitha</username>
+        <address>DSNGR</address>
+        <phone>968899554</phone>
+        <email>Raswitha@yahoo.com</email>
+        <books>
+            <bid>bk101</bid>
+            <bid>bk102</bid>
+            <bid>bk106</bid>
+            <bid>bk111</bid>
+            <bid>bk112</bid>
+        </books>
+    </user>
+    <user uid="usr10">
+        <username>A Prasanna</username>
+        <address>KPHB</address>
+        <phone>9088008554</phone>
+        <email>A Prasanna@yahoo.com</email>
+        <books>
+            <bid>bk112</bid>
+        </books>
+    </user>
+</userlist>

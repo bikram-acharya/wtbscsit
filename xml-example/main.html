@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+    </script>
+    <style>
+        .dcss {
+            display: none;
+
+        }
+       
+    </style>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <basefont face="Cambria" size="4"> <br>
+           
+            <font face="Brush Script MT" size="6" color="purple">
+            <b>User-Book Lending Information System</b>
+            <br>
+            </font>
+        </center>
+        <div align="center" style="margin-top: 20px; margin-bottom: 10">   
+        <form name="form">
+            <b>User ID:</b>  <input type="text" name="uname">
+            <input type="button" name="btn" value="Submit" onclick="checkXML()">
+        </form>
+        <div>
+
+    <div id='content' align="center" class="dcss" style="margin-top: 20px;">
+        <basefont face="Cambria" size="4"> <br>
+           
+            <font face="Brush Script MT" size="6" color="yellogreen">
+            <b>Retrieved Information</b>
+            <br>
+        </font>
+        <table id='users' cellpadding="10px" style="text-align:left;" border="1">
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+        </tbody>
+        </table>
+
+        <table id='books' cellpadding="10px" style="text-align:left;" border="1">
+            <thead>
+                <tr>
+                    <th>Author</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Description</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <script>
+
+
+        function checkXML() {
+            //fetch the data as soon as the page has loaded
+            $("#books").find("tr:gt(0)").remove();
+            $("#users").find("tr:gt(0)").remove();
+            let tableUsers = document.getElementById('users');
+            let tableBooks = document.getElementById('books');
+            let urlUsers = "users.xml";
+            let urlBooks = "books.xml";
+            var usrid = document.form.uname.value;
+            fetch(urlUsers)
+                .then(response => response.text())
+                .then(data => {
+
+                    let parser = new DOMParser();
+                    let xml = parser.parseFromString(data, "application/xml");
+                    let xmlDocs = xml.querySelectorAll('user');
+
+                    user_available= false
+
+                    xmlDocs.forEach(userXmlNode => {
+                       
+                        var userid = userXmlNode.getAttribute("uid");
+                        
+                        if (userid == usrid) {
+                            user_available = true
+
+                            let row = document.createElement('tr');
+
+                            //user
+                            let td = document.createElement('td');
+                            td.innerText = userXmlNode.children[0].innerHTML;
+                            row.appendChild(td);
+
+                            //  address
+                            td = document.createElement('td');
+                            td.innerText = userXmlNode.children[1].innerHTML;
+                            row.appendChild(td);
+
+                            //phone-number
+                            td = document.createElement('td');
+                            td.innerText = userXmlNode.children[2].innerHTML;
+                            row.appendChild(td);
+
+                            //email address
+                            td = document.createElement('td');
+                            td.innerText = userXmlNode.children[3].innerHTML;
+                            row.appendChild(td);
+
+                            tableUsers.children[1].appendChild(row);
+                            $(".dcss").css("display", "block");
+
+                            //tdq = document.createElement('td');
+                            tdq = userXmlNode.children[4];
+                            
+                            items = tdq.children.length
+                            
+                            if (items != 0) {
+                                fetch(urlBooks)
+                                    .then(response=> response.text())
+                                    .then(dataBooks => {
+                                        
+                                        let parserBooks = new DOMParser();
+                                        let xmlBooks = parserBooks.parseFromString(dataBooks, "application/xml");
+                                        let xmlDocsBooks = xmlBooks.querySelectorAll('book')
+
+
+
+                                        xmlDocsBooks.forEach(bookXmlNode => {
+
+                                            var bookid = bookXmlNode.getAttribute("uid");
+
+                                            for (let i = 0; i < items; i++) {
+                                                usrbkid = tdq.children[i].innerHTML
+                                                if (bookid == usrbkid) {
+                                                    
+
+                                                    let rowb = document.createElement('tr');
+
+                                                    //author
+                                                    let tdb = document.createElement('td');
+                                                    tdb.innerText = bookXmlNode.children[0].innerHTML;
+                                                    rowb.appendChild(tdb);
+
+                                                    //  title
+                                                    tdb = document.createElement('td');
+                                                    tdb.innerText = bookXmlNode.children[1].innerHTML;
+                                                    rowb.appendChild(tdb);
+
+                                                    //price
+                                                    tdb = document.createElement('td');
+                                                    tdb.innerText = '$ ' + bookXmlNode.children[3].innerHTML;
+                                                    rowb.appendChild(tdb);
+
+                                                    //description
+                                                    tdb = document.createElement('td');
+                                                    tdb.innerText = bookXmlNode.children[5].innerHTML;
+                                                    rowb.appendChild(tdb);
+
+                                                    tableBooks.children[1].appendChild(rowb);
+
+                                                }
+
+                                            }
+
+                                        });
+                                    })
+                            }
+
+
+                        }
+                       
+                        
+                    });
+                    if(!user_available){
+                            document.getElementById('users').innerHTML = '<basefont face="Cambria" size="4"> <br>'+
+                                                                        '<font face="Brush Script MT" size="6" color="purple">'+
+                                                                            '<b>No User Found</b>'+
+                                                                            '<br>'+
+                                                                            '</font>'+
+                                                                        '</center>'
+                            document.getElementById('books').innerHTML =""
+
+                           
+                        }
+
+                });
+            
+
+        }
+    </script>
+</body>
+
+</html>

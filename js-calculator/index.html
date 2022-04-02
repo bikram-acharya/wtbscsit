@@ -1,5 +1,5 @@
 <html>
-<script type="text/javascript" src="logic.js"></script>
+<script type="text/javascript" src="main.js"></script>
 </script>
 <body >
     <br>
@@ -15,31 +15,31 @@
 <td colspan=4><input type=text id=result size=16 onfocus="this.blur();"></td>
 </tr>
 <tr align="center">
-<td><input type=button value=0 size=2 onclick=f('0')></td>
-<td><input type=button value=1 size=2 onclick=f('1')></td>
-<td><input type=button value=2 size=2 onclick=f('2')></td>
-<td><input type=button value=+ size=2 onclick=f('+')></td>
+<td><input type=button value=0 size=2 onclick=logic('0')></td>
+<td><input type=button value=1 size=2 onclick=logic('1')></td>
+<td><input type=button value=2 size=2 onclick=logic('2')></td>
+<td><input type=button value=+ size=2 onclick=logic('+')></td>
 </tr>
 <tr align="center">
-<td><input type=button id=b5 value=3 size=2 onclick=f('3')></td>
-<td><input type=button id=b6 value=4 size=2 onclick=f('4')></td>
-<td><input type=button id=b7 value=5 size=2 onclick=f('5')></td>
-<td><input type=button id=b8 value=- size=2 onclick=f('-')></td>
+<td><input type=button id=b5 value=3 size=2 onclick=logic('3')></td>
+<td><input type=button id=b6 value=4 size=2 onclick=logic('4')></td>
+<td><input type=button id=b7 value=5 size=2 onclick=logic('5')></td>
+<td><input type=button id=b8 value=- size=2 onclick=logic('-')></td>
 </tr>
 <tr align="center">
-<td><input type=button id=b9 value=6 size=2 onclick=f('6')></td>
-<td><input type=button id=b10 value=7 size=2 onclick=f('7')></td>
-<td><input type=button id=b11 value=8 size=2 onclick=f('8')></td>
-<td><input type=button id=b12 value=* size=2 onclick=f('*')></td>
+<td><input type=button id=b9 value=6 size=2 onclick=logic('6')></td>
+<td><input type=button id=b10 value=7 size=2 onclick=logic('7')></td>
+<td><input type=button id=b11 value=8 size=2 onclick=logic('8')></td>
+<td><input type=button id=b12 value=* size=2 onclick=logic('*')></td>
 </tr>
 <tr align="center">
-<td><input type=button id=b13 value=9 size=2 onclick=f('9')></td>
-<td><input type=button id=b14 value=+/- size=2 onclick=f('--')></td>
-<td><input type=button value=Clr size=2 onclick=f('clr')></td>
-<td><input type=button id=b16 value='/' size=2 onclick=f('/')></td>
+<td><input type=button id=b13 value=9 size=2 onclick=logic('9')></td>
+<td><input type=button id=b14 value=+/- size=2 onclick=logic('--')></td>
+<td><input type=button value=Clr size=2 onclick=logic('clr')></td>
+<td><input type=button id=b16 value='/' size=2 onclick=logic('/')></td>
 </tr>
 <tr align="center">
-<td colspan=4 ><input type=button id=b15 value='='style="height:50%; width:50%" onclick=f('=')></td>
+<td colspan=4 ><input type=button id=b15 value='='style="height:50%; width:50%" onclick=logic('=')></td>
 
 </tr>
 </table>
